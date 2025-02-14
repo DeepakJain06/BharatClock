@@ -21,3 +21,80 @@
     }
 
   }
+
+        /* Root Styling */
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: linear-gradient(135deg, #1e1e1e, #3a3a3a);
+          overflow: hidden;
+        }
+    
+        /* Animated Floating Glass Effect */
+        .container {
+          width: 250px;
+          height: 400px;
+          border-radius: 20px;
+          backdrop-filter: blur(15px);
+          background: rgba(168, 166, 166, 0.1);
+          box-shadow: 0 20px 30px rgba(104, 102, 102, 0.2);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.3s ease-in-out;
+        }
+    
+        /* Hover 3D Effect */
+        .container:hover {
+          transform: scale(1.05) rotate(2deg);
+        }
+    
+        /* Dynamic Light Effect */
+        .container::before {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: radial-gradient(circle, rgba(128, 121, 121, 0.3) 0%, transparent 70%);
+          top: -50%;
+          left: -50%;
+          animation: moveLight 5s infinite alternate;
+        }
+    
+        /* Light Animation */
+        @keyframes moveLight {
+          0% {
+            transform: translate(0, 0);
+          }
+    
+          100% {
+            transform: translate(50%, 50%);
+          }
+        }
+    
+        /* Neon Border Effect */
+        .container::after {
+          content: "";
+          position: absolute;
+          inset: -2px;
+          border-radius: 20px;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+          transition: box-shadow 0.6s ease-in-out;
+        }
+    
+        .container:hover::after {
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+        }
+    
+        /* Text Inside the Box */
+        .container span {
+          color: white;
+          font-size: 18px;
+          font-weight: 600;
+          font-family: "Poppins", sans-serif;
+        }

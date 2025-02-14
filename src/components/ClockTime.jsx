@@ -1,12 +1,20 @@
-let ClockTime = () => {
+import { useState, useEffect } from "react";
 
-    let time = new Date();
+export default function LiveClock() {
+    const [time, setTime] = useState(new Date());
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTime(new Date()); // Update time every second
+        }, 1000);
 
-    return (<p className="lead">
-        This is the Current Time : {time.toLocaleDateString()} -{""} {time.toLocaleTimeString()}
-    </p>
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []);
+
+    return (
+        <p className="lead">
+            The Current Time: <br />
+            {time.toLocaleDateString()} - {time.toLocaleTimeString()}
+        </p>
     );
-};
-
-export default ClockTime;
+}
