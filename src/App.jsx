@@ -9,11 +9,12 @@ function App() {
   
 
   return (
-    <center>
+    <div id="div-main"> <center>
       <ClockHeading />
       <ClockSlogan />
       <CurrentTime />
-    </center>
+    </center></div>
+   
   );
 }
 

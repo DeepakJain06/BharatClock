@@ -1,0 +1,23 @@
+#div-main{
+    width: 700px;
+    height: 190px;
+    border-radius: 50%;
+    /* Makes it fully curved (a circle) */
+    background: linear-gradient(45deg, #949393, #746c6a, #b3bbc2, #6a7878);
+    margin-top: 100px;
+    background-size: 300% 300%;
+    border-top: 10px;
+    animation: gradientAnimation 3s infinite alternate;
+  }
+
+  /* Smooth gradient animation */
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    100% {
+      background-position: 100% 50%;
+    }
+
+  }
